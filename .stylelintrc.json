@@ -1,0 +1,14 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-tailwindcss"
+    ],
+    "rules": {
+        "at-rule-no-unknown": null,
+        "at-rule-no-deprecated": null,
+        "color-function-notation": "modern",
+        "hue-degree-notation": null,
+        "declaration-empty-line-before": null,
+        "rule-empty-line-before": null
+    }
+}

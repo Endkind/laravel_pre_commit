@@ -1,0 +1,41 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.25.1
+    hooks:
+      - id: eslint
+        files: \.(js|ts|vue)$
+        entry: npx eslint
+
+  - repo: local
+    hooks:
+      - id: stylelint
+        name: Stylelint
+        entry: npx stylelint --fix
+        language: system
+        files: \.(css|scss|vue)$
+
+      - id: larastan
+        name: Larastan (PHPStan for Laravel)
+        entry: ./vendor/bin/phpstan analyse --no-progress --memory-limit=512M
+        language: system
+        files: \.php$
+        pass_filenames: false
+
+      - id: composer-validate
+        name: Composer Validate
+        entry: composer validate --no-check-publish
+        language: system
+        files: ^composer\.json$
+
+      - id: laravel-pint
+        name: Laravel pint
+        entry: ./vendor/bin/pint --repair
+        language: system

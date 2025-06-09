@@ -1,0 +1,11 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "single_line_comment_style": {
+            "comment_types": ["asterisk"]
+        },
+        "single_line_comment_spacing": false,
+        "phpdoc_align": true,
+        "phpdoc_order": true
+    }
+}
